@@ -2,14 +2,18 @@ package com.lti.mypack.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="userdetails")
 public class UserDetails {
 	@Id
-	private String userid;
+	 
+	private int userid;
 	private String firstname;
 	private String lastname;
 	private String emailid;
@@ -19,9 +23,9 @@ public class UserDetails {
 	private String phoneNumber;
 	public UserDetails() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
-	public UserDetails(String userid, String firstname, String lastname, String emailid, String password,
+	public UserDetails(int userid, String firstname, String lastname, String emailid, String password,
 			String dateOfBirth, String gender, String phoneNumber) {
 		super();
 		this.userid = userid;
@@ -33,10 +37,10 @@ public class UserDetails {
 		this.gender = gender;
 		this.phoneNumber = phoneNumber;
 	}
-	public String getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 	public String getFirstname() {
@@ -82,5 +86,4 @@ public class UserDetails {
 		this.phoneNumber = phoneNumber;
 	}
 	
-
 }
