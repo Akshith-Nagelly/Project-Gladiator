@@ -12,7 +12,8 @@ import javax.persistence.Table;
 @Table(name="userdetails")
 public class UserDetails {
 	@Id
-	 
+    @SequenceGenerator(name="seq_uid", sequenceName="seq_uid", allocationSize=5)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_uid")
 	private int userid;
 	private String firstname;
 	private String lastname;

@@ -1,5 +1,6 @@
 package com.lti.mypack.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.lti.mypack.model.Passenger;
@@ -7,6 +8,9 @@ import com.lti.mypack.model.Passenger;
 public interface PassengersService {
 	
 	public List<Passenger> getAllPassengers();
-	public boolean addPassenger(Passenger passenger);
+//	public boolean addPassenger(List<Passenger> passenger);
+//	public List<Passenger> addAllPassenger();
+//	public List<Passenger> addAllPassenger(Passenger passenger);
+	public boolean addAllPassenger(Passenger passenger);
 
 }

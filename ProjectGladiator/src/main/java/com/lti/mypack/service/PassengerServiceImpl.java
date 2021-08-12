@@ -1,5 +1,6 @@
 package com.lti.mypack.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import com.lti.mypack.repository.PassengersRepository;
 @Service
 @Transactional
 public class PassengerServiceImpl implements PassengersService {
+	
+	private int noOfPaaengers=3;
+	private int i=0;
 	@Autowired
 	PassengersRepository paRepo;
 
@@ -22,9 +26,20 @@ public class PassengerServiceImpl implements PassengersService {
 	}
 
 	@Override
-	public boolean addPassenger(Passenger passenger) {
+	public boolean addAllPassenger(Passenger passenger)
+	{
+		
 		paRepo.save(passenger);
+		
 		return true;
 	}
+	
+
+	
+/*	@Override
+	public List<Passenger> addAllPassenger(Passenger passenger ) {
+		
+		return (List<Passenger>) paRepo.save(passenger);
+	}*/
 
 }

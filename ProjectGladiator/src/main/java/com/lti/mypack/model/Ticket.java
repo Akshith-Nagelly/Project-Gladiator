@@ -1,15 +1,20 @@
 package com.lti.mypack.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="ticket")
 public class Ticket {
 	@Id
+	@SequenceGenerator(name = "mySeqGen", sequenceName = "myseq",
+    initialValue = 500, allocationSize = 1)
+@GeneratedValue(generator = "mySeqGen")
 	private int ticket_id;
-	private int booking_id;
 	private String seat_no;
 	private int passenger_id;
 	private String ticket_status;
@@ -18,11 +23,10 @@ public class Ticket {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Ticket(int ticket_id, int booking_id, String seat_no, int passenger_id, String ticket_status,
+	public Ticket(int ticket_id, String seat_no, int passenger_id, String ticket_status,
 			String ticket_cancellation_date) {
 		super();
 		this.ticket_id = ticket_id;
-		this.booking_id = booking_id;
 		this.seat_no = seat_no;
 		this.passenger_id = passenger_id;
 		this.ticket_status = ticket_status;
@@ -33,12 +37,6 @@ public class Ticket {
 	}
 	public void setTicket_id(int ticket_id) {
 		this.ticket_id = ticket_id;
-	}
-	public int getBooking_id() {
-		return booking_id;
-	}
-	public void setBooking_id(int booking_id) {
-		this.booking_id = booking_id;
 	}
 	public String getSeat_no() {
 		return seat_no;
@@ -66,6 +64,4 @@ public class Ticket {
 	}
 	
 	
-	
-
 }
