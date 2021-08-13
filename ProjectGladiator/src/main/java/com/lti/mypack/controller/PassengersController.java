@@ -30,6 +30,10 @@ public class PassengersController {
 	public boolean addPassenger(@RequestBody Passenger passenger) {
 		return paService.addAllPassenger(passenger);
 	}
+	@GetMapping("/maxpassengerid")
+	public Passenger getPassenger() {
+		return paService.getPassenger();
+	}
 	
 	
 

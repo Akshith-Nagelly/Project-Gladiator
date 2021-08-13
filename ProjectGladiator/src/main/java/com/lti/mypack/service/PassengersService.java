@@ -12,5 +12,6 @@ public interface PassengersService {
 //	public List<Passenger> addAllPassenger();
 //	public List<Passenger> addAllPassenger(Passenger passenger);
 	public boolean addAllPassenger(Passenger passenger);
+	public Passenger getPassenger();
 
 }

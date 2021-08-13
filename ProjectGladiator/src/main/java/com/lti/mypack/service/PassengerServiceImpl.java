@@ -33,6 +33,12 @@ public class PassengerServiceImpl implements PassengersService {
 		
 		return true;
 	}
+
+	@Override
+	public Passenger getPassenger() {
+		
+		return paRepo.getPassenger();
+	}
 	
 
 	

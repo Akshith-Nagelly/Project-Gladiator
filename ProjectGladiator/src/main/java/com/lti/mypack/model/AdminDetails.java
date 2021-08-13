@@ -1,9 +1,13 @@
 package com.lti.mypack.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="admindetails")
@@ -14,7 +18,8 @@ public class AdminDetails {
 	private String last_name;
 	private String email_id;
 	private String admin_password;
-	private String date_of_birth;
+	@Temporal(TemporalType.DATE)
+	private java.util.Date date_of_birth;
 	private String gender;
 	private String phone_number;
 	public AdminDetails() {
@@ -22,7 +27,7 @@ public class AdminDetails {
 		// TODO Auto-generated constructor stub
 	}
 	public AdminDetails(int admin_id, String first_name, String last_name, String email_id, String admin_password,
-			String date_of_birth, String gender, String phone_number) {
+			java.util.Date date_of_birth, String gender, String phone_number) {
 		super();
 		this.admin_id = admin_id;
 		this.first_name = first_name;
@@ -63,10 +68,10 @@ public class AdminDetails {
 	public void setAdmin_password(String admin_password) {
 		this.admin_password = admin_password;
 	}
-	public String getDate_of_birth() {
+	public java.util.Date getDate_of_birth() {
 		return date_of_birth;
 	}
-	public void setDate_of_birth(String date_of_birth) {
+	public void setDate_of_birth(java.util.Date date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 	public String getGender() {
@@ -81,5 +86,6 @@ public class AdminDetails {
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
+	
 	
 }
